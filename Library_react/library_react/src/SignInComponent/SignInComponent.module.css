@@ -1,0 +1,98 @@
+.formDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 4%;
+    width: 40%;
+}
+
+.signinTitle {
+    margin-bottom: 5%;
+}
+
+.form {
+    display: 'flex';
+    flex-direction: 'column';
+    justify-content: 'center';
+    align-items: 'center';
+}
+
+@media screen and (max-width: 1210px) {
+    .signinTitle {
+        font-size: 28px;
+    }
+
+    .emailInput {
+        font-size: 14px !important;
+    }
+
+    .passwordInput {
+        font-size: 14px !important
+    }
+
+    .signinBtn {
+        font-size: 14px !important
+    }
+
+    .signupBtn{
+        font-size: 12px !important
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .signinTitle {
+        font-size: 24px;
+    }
+
+    .emailInput {
+        font-size: 12px !important;
+    }
+
+    .passwordInput {
+        font-size: 12px !important
+    }
+
+    .signinBtn {
+        font-size: 12px !important
+    }
+
+    .signupBtn{
+        font-size: 10px !important
+    }
+
+    .formDiv{
+        padding: 3%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .signinTitle {
+        font-size: 20px;
+    }
+
+    .emailInput {
+        font-size: 10px !important;
+    }
+
+    .passwordInput {
+        font-size: 10px !important
+    }
+
+    .signinBtn {
+        font-size: 10px !important
+    }
+
+    
+    .signupBtn{
+        font-size: 8px !important
+    }
+
+    .formDiv{
+        padding: 2%;
+    }
+}

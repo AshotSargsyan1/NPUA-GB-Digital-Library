@@ -1,0 +1,105 @@
+.bookImage {
+    height: 400px;
+    width: 100%
+}
+
+.bookAuthor {
+    font-weight: 600 !important;
+    margin-top: 20px !important
+}
+
+.addFavoriteBook {
+    color: black;
+}
+
+
+.bookName {
+    font-size: 32px !important;
+}
+
+.btns {
+    height: 26px !important;
+    width: 26px !important;
+}
+
+
+@media screen and (max-width: 1390px) {
+    .bookImage {
+        height: 350px;
+    }
+
+    .bookName {
+        font-size: 30px !important;
+    }
+
+    .errorH2{
+        font-size: 22px;
+    }
+
+}
+
+@media screen and (max-width: 1210px) {
+    .bookImage {
+        height: 300px;
+    }
+
+    .bookName {
+        font-size: 26px !important;
+    }
+
+    .btns {
+        height: 22px !important;
+        width: 22px !important;
+    }
+
+    
+    .errorH2{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .bookImage {
+        height: 250px;
+    }
+
+    .bookName {
+        font-size: 22px !important;
+    }
+
+    .bookDescription {
+        font-size: 12px !important;
+    }
+
+    .bookAuthor {
+        font-size: 12px !important;
+    }
+
+    .errorH2{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .bookImage {
+        height: 200px;
+    }
+
+    .bookName {
+        font-size: 18px !important;
+    }
+
+    .bookAuthor {
+        font-size: 10px !important;
+    }
+
+    .btns {
+        height: 18px !important;
+        width: 18px !important;
+    }
+
+    
+    .errorH2{
+        font-size: 16px;
+    }
+}

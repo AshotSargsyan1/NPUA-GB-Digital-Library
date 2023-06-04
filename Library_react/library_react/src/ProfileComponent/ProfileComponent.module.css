@@ -1,0 +1,159 @@
+.card {
+    width: 30%;
+    margin-left: 35%;
+    background-color: light gray;
+    margin-bottom: 5%;
+}
+
+.profileHeader {
+    background: rgb(25, 118, 210);
+    padding: 5%
+}
+
+.profileTitle {
+    color: white;
+    margin-bottom: 5% !important;
+    margin-top: 5% !important;
+    font-size: 42px !important;
+}
+
+.profileInfo {
+    color: white;
+    height: 50px;
+    margin-bottom: 5%;
+}
+
+.searchInput {
+    width: 100%;
+    margin-right: 5%;
+    border: 1px solid white !important
+}
+
+.profileEmail {
+    color: white;
+}
+
+.operations {
+    padding: 5% 0 5%
+}
+
+.operationsBtns {
+    cursor: pointer;
+    margin-top: 2% !important
+}
+
+.avatarIcon{
+    height: 100px !important;
+    width: 100px !important;
+}
+
+.operationsNames{
+    display: inline-block;
+    font-size: 16px !important
+}
+
+.btns{
+    cursor: pointer;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    font-size: 36px !important;
+    margin-right: 10%;
+}
+
+.btnSize{
+    height: 35px !important;
+}
+
+.group{
+    text-align: center;
+}
+
+@media screen and (max-width: 1390px) {
+    .profileTitle {
+        font-size: 38px !important
+    }
+
+    .avatarIcon{
+        height: 90px !important;
+        width: 90px !important;
+    }
+
+}
+
+@media screen and (max-width: 1210px) {
+    .profileTitle {
+        font-size: 34px !important
+    }
+
+
+    .name {
+        font-size: 28px !important
+    }
+
+    .avatarIcon{
+        height: 80px !important;
+        width: 80px !important;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .profileTitle {
+        font-size: 30px !important
+    }
+
+
+    .name {
+        font-size: 26px !important
+    }
+
+    .avatarIcon{
+        height: 70px !important;
+        width: 70px !important;
+    }
+
+    .profileEmail{
+        font-size: 14px !important;
+    }
+
+    .operationsNames{
+        font-size: 14px !important
+    }
+
+    .btnSize{
+        height: 14px !important;
+    }
+    
+}
+
+@media screen and (max-width: 850px) {
+    .profileTitle {
+        font-size: 26px !important
+    }
+
+    
+    .name {
+        font-size: 22px !important
+    }
+
+    .avatarIcon{
+        height: 60px !important;
+        width: 60px !important;
+    }
+
+    .profileEmail{
+        font-size: 10px !important;
+    }
+
+    .operationsNames{
+        font-size: 10px !important
+    }
+
+    .btnSize{
+        height: 10px !important;
+    }
+    
+}

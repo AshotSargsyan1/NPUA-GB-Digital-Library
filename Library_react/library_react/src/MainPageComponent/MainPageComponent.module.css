@@ -1,0 +1,231 @@
+.backGroundImageDiv {
+    height: 800px;
+    min-width: 100%;
+    margin-top: 50px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-color: grey;
+    background-image: url('../assets/booksImage.jpg');
+    position: relative;
+    margin-bottom: 150px;
+}
+
+
+.backGroundImageDiv::after {
+    content: 'Համալսարանի ամբողջ գրքերը այստեղ';
+    font-size: 50px;
+    width: 700px;
+    top: 20%;
+    left: 15%;
+    font-weight: bold;
+    position: absolute;
+    color: white;
+}
+
+.mainTitle {
+    text-align: center;
+    font-size: 50px;
+}
+
+.secondImageAndDescription {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0px auto;
+    height: 500px;
+}
+
+.secondImage {
+    height: 100%;
+    width: 40%;
+    border-radius: 10px;
+    background-image: url('../assets/book.jpg');
+    background-size: cover;
+}
+
+.secondDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.secondDescription :first-child {
+    font-size: 36px;
+}
+
+.openLibraryBtn {
+    height: 60px;
+    width: 200px;
+}
+
+@media screen and (max-width: 1390px) {
+    .backGroundImageDiv {
+        height: 600px;
+        margin-top: 40px;
+        margin-bottom: 140px;
+        margin-bottom: 130px;
+    }
+
+    .backGroundImageDiv::after {
+        font-size: 45px;
+        width: 650px;
+    }
+
+    .numberOfBooks {
+        font-size: 22px;
+    }
+
+    .mainTitle {
+        font-size: 45px;
+    }
+
+    .secondDescription :first-child {
+        font-size: 32px;
+    }
+
+    .libraryCreationData {
+        font-size: 22px;
+    }
+
+    .secondImageAndDescription {
+        height: 400px;
+    }
+
+    .openLibraryBtn {
+        height: 50px;
+        width: 180px;
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .backGroundImageDiv {
+        height: 500px;
+        margin-top: 30px;
+        margin-bottom: 110px;
+    }
+
+    .backGroundImageDiv::after {
+        font-size: 35px;
+        width: 500px;
+    }
+
+    .libraryCreationData {
+        font-size: 20px;
+    }
+
+    .numberOfBooks {
+        font-size: 20px;
+    }
+
+    .mainTitle {
+        font-size: 40px;
+    }
+
+    .secondImageAndDescription {
+        margin: 30px 0 30px 10%;
+    }
+
+    .secondDescription :first-child {
+        font-size: 28px;
+    }
+
+    .secondImageAndDescription {
+        height: 300px;
+    }
+
+    .openLibraryBtn {
+        height: 40px;
+        width: 160px;
+        font-size: 12px !important;
+    }
+}
+
+
+@media screen and (max-width: 1030px) {
+    .backGroundImageDiv {
+        height: 400px;
+        margin-top: 20px;
+        margin-bottom: 90px;
+    }
+
+    .backGroundImageDiv::after {
+        font-size: 25px;
+        width: 400px;
+    }
+
+    .libraryCreationData {
+        font-size: 16px;
+    }
+
+    .numberOfBooks {
+        font-size: 16px;
+    }
+
+    .mainTitle {
+        font-size: 35px;
+    }
+
+    .secondImageAndDescription {
+        margin: 20px 0 20px 10%;
+    }
+
+    .secondDescription :first-child {
+        font-size: 24px;
+    }
+
+    .secondImageAndDescription {
+        height: 200px;
+    }
+
+    .openLibraryBtn {
+        width: 140px;
+        height: 30px;
+        font-size: 10px !important;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .backGroundImageDiv {
+        height: 300px;
+        margin-top: 10px;
+        margin-bottom: 60px;
+    }
+
+    .backGroundImageDiv::after {
+        font-size: 15px;
+        width: 250px;
+    }
+
+    .libraryCreationData {
+        font-size: 14px;
+    }
+
+    .numberOfBooks {
+        font-size: 14px;
+    }
+
+    .mainTitle {
+        font-size: 30px;
+    }
+
+    .secondImageAndDescription {
+        margin: 10px 0 10px 10%;
+    }
+
+    .secondDescription :first-child {
+        font-size: 16px;
+    }
+
+    .secondImageAndDescription {
+        height: 150px;
+    }
+
+    .openLibraryBtn {
+        width: 120px;
+        height: 20px;
+        font-size: 8px !important;
+    }
+}

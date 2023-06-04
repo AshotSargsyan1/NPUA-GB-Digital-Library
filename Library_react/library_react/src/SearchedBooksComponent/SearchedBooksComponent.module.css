@@ -1,0 +1,193 @@
+.bookImg {
+    height: 250px;
+    width: 220px;
+}
+
+.itemName {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    margin-bottom: 2% !important;
+}
+
+.itemDescription {
+    font-size: 16px !important;
+    margin-bottom: 3% !important;
+}
+
+.itemAuthor {
+    font-size: 18px !important;
+}
+
+.btns {
+    height: 26px !important;
+    width: 26px !important;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .bookImg {
+        height: 230px;
+        width: 200px;
+    }
+
+    .itemName {
+        font-size: 19px !important;
+    }
+
+    .itemDescription {
+        font-size: 15px !important;
+    }
+
+    .itemAuthor{
+        font-size: 17px !important;
+    }
+
+    .btns{
+        height: 23px !important;
+        width: 23px !important;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .bookImg {
+        height: 220px;
+        width: 190px;
+    }
+
+    .itemName {
+        font-size: 18px !important;
+    }
+
+    .itemDescription {
+        font-size: 14px !important;
+    }
+
+    .btns {
+        height: 22px !important;
+        width: 21px !important;
+    }
+
+    .itemAuthor{
+        font-size: 16px !important;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .bookImg {
+        height: 210px;
+        width: 180px;
+    }
+
+    .itemName {
+        font-size: 17px !important;
+    }
+
+    .itemDescription {
+        font-size: 13px !important;
+    }
+
+    .btns {
+        height: 20px !important;
+        width: 20px !important;
+    }
+
+    .itemAuthor{
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    .bookImg {
+        height: 200px;
+        width: 170px;
+    }
+
+    .itemName {
+        font-size: 16px !important;
+    }
+
+    .itemDescription {
+        font-size: 12px !important;
+    }
+
+    .btns {
+        height: 18px !important;
+        width: 18px !important;
+    }
+
+    .itemAuthor{
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (max-width: 1160px) {
+    .bookImg {
+        height: 190px;
+        width: 160px;
+    }
+
+    .itemName {
+        font-size: 14px !important;
+    }
+
+    .itemDescription {
+        font-size: 12px !important;
+    }
+
+    .btns {
+        height: 17px !important;
+        width: 17px !important;
+    }
+
+    .itemAuthor{
+        font-size: 13px !important;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .bookImg {
+        height: 180px;
+        width: 150px;
+    }
+
+    .itemName {
+        font-size: 13px !important;
+    }
+
+    .itemDescription {
+        font-size: 11px !important;
+    }
+
+    .btns {
+        height: 16px !important;
+        width: 16px !important;
+    }
+
+    .itemAuthor{
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .bookImg {
+        height: 170px;
+        width: 140px;
+    }
+
+    .itemName {
+        font-size: 11px !important;
+    }
+
+    .itemDescription {
+        font-size: 9px !important;
+    }
+
+    .btns {
+        height: 14px !important;
+        width: 14px !important;
+    }
+
+    .itemAuthor{
+        font-size: 10px !important;
+    }
+}

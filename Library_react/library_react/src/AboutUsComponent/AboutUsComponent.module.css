@@ -1,0 +1,48 @@
+.aboutUs {
+    display: 'flex';
+    flex-direction: 'column';
+    justify-content: 'center';
+    align-items: 'center';
+    width: 80%;
+    margin: 0 auto;
+}
+
+.aboutUsTitle {
+    text-align: center;
+}
+
+.aboutUsParagraph {
+    text-indent: 24px;
+}
+
+@media screen and (max-width: 1210px) {
+    .aboutUsTitle {
+        font-size: 28px;
+    }
+
+    .aboutUsParagraph {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .aboutUsTitle {
+        font-size: 24px;
+    }
+
+    .aboutUsParagraph {
+        font-size: 14px;
+        text-indent: 20px;
+    }
+}
+
+@media screen and (max-width: 850pxx) {
+    .aboutUsTitle {
+        font-size: 16px;
+    }
+
+    .aboutUsParagraph {
+        font-size: 12px;
+        text-indent: 16px;
+    }
+}

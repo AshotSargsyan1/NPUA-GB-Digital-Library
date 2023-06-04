@@ -1,0 +1,88 @@
+.mainDiv {
+    margin: 50px 50px 0;
+    width: 26.5%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.mainDiv:hover {
+    color: blue;
+    transition-duration: 1000ms;
+}
+
+.imgSize {
+    height: 350px;
+    width: 100%;
+}
+
+.title {
+    text-decoration: underline;
+    text-align: center;
+}
+
+@media screen and (max-width: 1465px) {
+    .mainDiv {
+        height: 320px;
+        margin: 40px 40px 0;
+    }
+
+    .imgSize {
+        height: 320px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 1390px) {
+    .mainDiv {
+        margin: 30px 30px 0;
+        height: 290px;
+    }
+
+    .imgSize {
+        height: 280px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .title {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .mainDiv {
+        margin: 10px 10px 0;
+        height: 180px;
+    }
+
+    .imgSize {
+        height: 170px;
+    }
+
+    .title {
+        font-size: 10px;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .mainDiv {
+        margin: 0;
+        height: 150px;
+    }
+
+    .imgSize {
+        height: 140px;
+    }
+
+    .title {
+        font-size: 6px;
+    }
+}

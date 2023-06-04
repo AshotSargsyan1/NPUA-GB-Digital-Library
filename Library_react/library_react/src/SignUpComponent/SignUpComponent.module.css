@@ -1,0 +1,56 @@
+.formDiv {
+    width: 50%;
+    margin: 0 25% 5% 25%;
+    padding: 2%;
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs {
+    margin-bottom: 2% !important;
+}
+
+.form {
+    display: 'flex';
+    flex-direction: 'column';
+    justify-content: 'center';
+    align-items: 'center';
+}
+
+.signupTitle {
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 1210px) {
+    .signupTitle {
+        font-size: 28px;
+    }
+
+    .signupBtn{
+        font-size: 14px !important;
+    }
+
+}
+
+@media screen and (max-width: 1030px) {
+    .signupTitle {
+        font-size: 24px;
+    }
+
+    .signupBtn {
+        font-size: 12px !important
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .signupTitle {
+        font-size: 20px;
+    }
+
+    .signupBtn {
+        font-size: 10px !important
+    }
+}

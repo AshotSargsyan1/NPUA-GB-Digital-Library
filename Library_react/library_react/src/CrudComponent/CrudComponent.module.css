@@ -1,0 +1,10 @@
+.mainDiv{
+    text-align: center;
+    min-height: 1500px;
+}
+
+.operationDiv{
+    border: 1px solid;
+    width: 60%;
+    margin: 50px auto;
+}

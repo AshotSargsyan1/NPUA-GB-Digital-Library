@@ -1,0 +1,105 @@
+.mainDiv {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    background-color: gray;
+    padding: 5px;
+    margin-top: auto;
+}
+
+.mainDiv img {
+    height: 30px;
+    margin-left: 10px;
+}
+
+.logoDiv {
+    display: flex;
+    align-items: center;
+}
+
+.focus {
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.focus:hover {
+    color: blue;
+    transition-duration: 1000ms;
+}
+
+
+
+@media screen and (max-width: 1390px) {
+    .mainDiv {
+        height: 80px;
+    }
+
+    .logoDiv h2 {
+        font-size: 22px;
+    }
+
+    .focus {
+        font-size: 22px;
+    }
+
+}
+
+
+@media screen and (max-width: 1210px) {
+    .mainDiv {
+        height: 70px;
+    }
+
+    .mainDiv img {
+        height: 25px;
+    }
+
+    .logoDiv h2 {
+        font-size: 20px;
+    }
+
+    .focus{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 1030px) {
+    .mainDiv {
+        height: 60px;
+    }
+
+    .mainDiv img {
+        height: 20px;
+    }
+
+    .logoDiv h2 {
+        font-size: 18px;
+    }
+
+    .focus{
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .mainDiv {
+        height: 50px;
+    }
+
+    .mainDiv img {
+        height: 15px;
+    }
+
+    .logoDiv h2 {
+        font-size: 16px;
+    }
+
+    .focus{
+        font-size: 16px;
+    }
+}

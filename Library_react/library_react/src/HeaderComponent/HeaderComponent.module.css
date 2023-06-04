@@ -1,0 +1,87 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.appBar {
+    margin-bottom: 50px;
+    background-color: white !important;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.toolbar {
+    margin: 0 50px 0 30px
+}
+
+.searchInput {
+    width: 550px;
+    height: 55px;
+    border-radius: 5px;
+    background: #C4C9E9;
+}
+
+
+
+@media screen and (max-width: 1390px) {
+    .searchInput {
+        width: 450px;
+        border-radius: 4px;
+    }
+
+    .logo {
+        width: 350px;
+    }
+
+    .toolbar {
+        margin: 0 40px 0 40px
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    .searchInput {
+        width: 350px;
+        border-radius: 3px;
+    }
+
+    .logo {
+        width: 300px;
+    }
+
+    .toolbar {
+        margin: 0 30px 0 30px
+    }
+}
+
+
+
+@media screen and (max-width: 1030px) {
+    .searchInput {
+        width: 250px;
+        border-radius: 2px;
+    }
+
+    .toolbar {
+        margin: 0 20px 0 20px
+    }
+}
+
+
+@media screen and (max-width: 850px) {
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .searchInput {
+        width: 300px;
+        border-radius: 1px;
+    }
+
+    .logo {
+        width: 400px;
+    }
+}
