@@ -60,7 +60,7 @@ function getTokens(data) {
     return accessToken
 }
 
-server.get('/booksnumber', async (req, res) => {
+server.get('/api/booksnumber', async (req, res) => {
     try {
         await collectionBooks.stats().then(resp => res.json(resp.count))
     } catch (err) {
@@ -68,7 +68,7 @@ server.get('/booksnumber', async (req, res) => {
     }
 })
 
-server.get('/books', async (req, res) => {
+server.get('/api/books', async (req, res) => {
     if (req.query.type) {
         try {
             await collectionBooks.find(req.query).toArray()
@@ -82,7 +82,7 @@ server.get('/books', async (req, res) => {
     }
 })
 
-server.get('/categories', (req, res) => {
+server.get('/api/categories', (req, res) => {
     try {
         collectionCategories.find().toArray()
             .then(resp => res.json(resp))
@@ -91,7 +91,7 @@ server.get('/categories', (req, res) => {
     }
 })
 
-server.get('/aboutcategories', async (req, res) => {
+server.get('/api/aboutcategories', async (req, res) => {
     if (req.query.type) {
         const aboutCategoriesData = await collectionCategories.findOne(req.query);
         res.json(aboutCategoriesData);
@@ -100,7 +100,7 @@ server.get('/aboutcategories', async (req, res) => {
     }
 })
 
-server.get('/searchBooks', async (req, res) => {
+server.get('/api/searchBooks', async (req, res) => {
     if (req.query.dataForSearchBooks) {
         await collectionBooks.find({ name: { $regex: `${req.query.dataForSearchBooks}`, $options: "i" } })
             .toArray()
@@ -110,7 +110,7 @@ server.get('/searchBooks', async (req, res) => {
     }
 })
 
-server.post('/setfavoritebook', verifyAuthorizationMiddleware, async (req, res) => {
+server.post('/api/setfavoritebook', verifyAuthorizationMiddleware, async (req, res) => {
     const { _id, img, name, author, description } = req.body.dataForFavoriteBook
 
     const searchedFavoriteBook = await collectionUsers.find({ favoriteBooks: { $elemMatch: { id: _id } } }).toArray()
@@ -131,7 +131,7 @@ server.post('/setfavoritebook', verifyAuthorizationMiddleware, async (req, res) 
     res.sendStatus(200)
 })
 
-server.post('/createbook', async (req, res) => {
+server.post('/api/createbook', async (req, res) => {
     const { img, type, name, author, description, pathForDownload, language, dataEdition, bookCode, barCode } = req.body.valuesForCreate
     await collectionBooks.insertOne({
         img,
@@ -149,7 +149,7 @@ server.post('/createbook', async (req, res) => {
 }
 )
 
-server.put('/updatebook', async (req, res) => {
+server.put('/api/updatebook', async (req, res) => {
     const { img, type, newNameForUpdate, author, description, id, pathForDownload, language, dataEdition, bookCode, barCode } = req.body.valuesForUpdate
     await collectionBooks.updateOne({ '_id': ObjectId(id) }, {
         $set:
@@ -168,14 +168,14 @@ server.put('/updatebook', async (req, res) => {
     }).then(() => res.json('Tarmacvac e')).catch(err => res.json('Arajacel e xndir'))
 })
 
-server.delete('/deletebook', async (req, res) => {
+server.delete('/api/deletebook', async (req, res) => {
     const { idForDeleteBook } = req.body
     await collectionBooks.deleteOne({ '_id': ObjectId(idForDeleteBook) }).then(() => { res.json('Jnjvac e') })
 })
 
 
 
-server.post('/signup', async (req, res) => {
+server.post('/api/signup', async (req, res) => {
     try {
         const { firstName, lastName, email, password, group, passport, userQrCode } = req.body
         const searchUser = await collectionUsers.findOne({ email: email })
@@ -204,7 +204,7 @@ server.post('/signup', async (req, res) => {
 })
 
 
-server.post('/signin', async (req, res) => {
+server.post('/api/signin', async (req, res) => {
     try {
         const { email, password } = req.body
         const user = await collectionUsers.findOne({ email: email })
@@ -248,16 +248,16 @@ function verifyAuthorizationMiddleware(req, res, next) {
 
 }
 
-server.get('/profile', verifyAuthorizationMiddleware, async (req, res) => {
+server.get('/api/profile', verifyAuthorizationMiddleware, async (req, res) => {
     collectionUsers.findOne({ email: req.user.data })
         .then(resp => res.json(resp))
 })
 
-server.post('/changename', verifyAuthorizationMiddleware, async (req, res) => {
+server.post('/api/changename', verifyAuthorizationMiddleware, async (req, res) => {
     collectionUsers.updateOne({ email: req.user.data }, { $set: { firstName: req.body.newName } })
 })
 
-server.get('/downloadbook', async (req, res) => {
+server.get('/api/downloadbook', async (req, res) => {
     const { bookidfordownload } = req.query
     const book = await collectionBooks.findOne({ '_id': ObjectId(bookidfordownload) })
     if (book.pathForDownload) {
@@ -270,25 +270,25 @@ server.get('/downloadbook', async (req, res) => {
 
 })
 
-server.get('/getfavoritebooks', verifyAuthorizationMiddleware, async (req, res) => {
+server.get('/api/getfavoritebooks', verifyAuthorizationMiddleware, async (req, res) => {
     await collectionUsers.findOne({ email: req.user.data })
         .then(resp => res.json(resp.favoriteBooks))
 })
 
-server.delete('/removefavoritebook', verifyAuthorizationMiddleware, async (req, res) => {
+server.delete('/api/removefavoritebook', verifyAuthorizationMiddleware, async (req, res) => {
     const { idForRemove } = req.body
     await collectionUsers.updateOne({ email: req.user.data }, { $pull: { favoriteBooks: { id: idForRemove } } })
         .then(resp => res.sendStatus(200))
 
 })
 
-server.get('/allbooks', async (req, res) => {
+server.get('/api/allbooks', async (req, res) => {
     await collectionBooks.find().toArray()
         .then(resp => res.json(resp))
         .catch(err => console.log(err))
 })
 
-server.post('/createcategorie', async (req, res) => {
+server.post('/api/createcategorie', async (req, res) => {
     const { title, img, aboutGenre, type } = req.body.valuesForCreateCategorie
     await collectionCategories.insertOne({
         title,
@@ -298,7 +298,7 @@ server.post('/createcategorie', async (req, res) => {
     }).then(e => res.sendStatus(200))
 })
 
-server.put('/updatecategorie', async (req, res) => {
+server.put('/api/updatecategorie', async (req, res) => {
     const { id, title, img, aboutGenre, type } = req.body.valuesForUpdateCategorie
     await collectionCategories.updateOne({ '_id': ObjectId(id) }, {
         $set: {
@@ -310,12 +310,12 @@ server.put('/updatecategorie', async (req, res) => {
     }).then(resp => res.sendStatus(200))
 })
 
-server.delete('/deletecategorie', async (req, res) => {
+server.delete('/api/deletecategorie', async (req, res) => {
     const { idForDeleteCategorie } = req.body
     await collectionCategories.deleteOne({ '_id': ObjectId(idForDeleteCategorie) }).then(resp => res.sendStatus(200))
 })
 
-server.post('/senddataforgivebook', async (req, res) => {
+server.post('/api/senddataforgivebook', async (req, res) => {
     const { dataForGiveBookArg } = req.body
     const user = await collectionUsers.findOne({ userQrCode: dataForGiveBookArg.qrCode })
     if (!user) {
@@ -345,20 +345,20 @@ server.post('/senddataforgivebook', async (req, res) => {
     })
 })
 
-server.get('/givedbooks', async (req, res) => {
+server.get('/api/givedbooks', async (req, res) => {
     await collectionGivedBooks.find().toArray().then(givedBooks => res.json(givedBooks))
 })
 
-server.delete('/deletegivedbooks', async (req, res) => {
+server.delete('/api/deletegivedbooks', async (req, res) => {
     const { id } = req.query;
     await collectionGivedBooks.deleteOne({ _id: ObjectId(id) }).then(resp => res.sendStatus(200))
 })
 
-server.get('/archiveofbooksgiventostudents', async (req, res) => {
+server.get('/api/archiveofbooksgiventostudents', async (req, res) => {
     await collectionArchiveOfBooksGivenToStudents.find().toArray().then(resp => res.json(resp))
 })
 
-server.post('/sendfeedbackmessage', verifyAuthorizationMiddleware, async (req, res) => {
+server.post('/api/sendfeedbackmessage', verifyAuthorizationMiddleware, async (req, res) => {
     const { theme, text } = req.body.feedbackMessage.values;
     const { firstName, lastName, email, group } = req.body.feedbackMessage.profileData;
     await collectionFeedbackMessages.insertOne({
@@ -372,17 +372,17 @@ server.post('/sendfeedbackmessage', verifyAuthorizationMiddleware, async (req, r
     }).then(() => res.sendStatus(200))
 })
 
-server.get('/getfeedbackmessages', verifyAuthorizationMiddleware, async (req, res) => {
+server.get('/api/getfeedbackmessages', verifyAuthorizationMiddleware, async (req, res) => {
     await collectionFeedbackMessages.find().toArray().then(resp => res.json(resp))
 })
 
-server.delete('/deletefeedbackmessage', verifyAuthorizationMiddleware, async (req, res) => {
+server.delete('/api/deletefeedbackmessage', verifyAuthorizationMiddleware, async (req, res) => {
     const { id } = req.query
     const feedbackMessage = await collectionFeedbackMessages.findOne({ _id: ObjectId(id) })
     await collectionRemovedFeedbackMessages.insertOne(feedbackMessage)
     await collectionFeedbackMessages.deleteOne({ _id: ObjectId(id) }).then(res.sendStatus(200))
 })
 
-server.get('/removedfeedbackmessages', verifyAuthorizationMiddleware, async (req, res) => {
+server.get('/api/removedfeedbackmessages', verifyAuthorizationMiddleware, async (req, res) => {
     await collectionRemovedFeedbackMessages.find().toArray().then(resp => res.json(resp))
 })
